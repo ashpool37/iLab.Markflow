@@ -67,11 +67,12 @@ int main (int argc, char* argv[])
     }
 
     srand (time (NULL));
-    wchar_t* seed = calloc (CONTEXT, sizeof (wchar_t));
+    wchar_t* seed = calloc (CONTEXT + 1, sizeof (wchar_t));
     wchar_t nwch = L'\0';
     float rndf = 0.0; float rndacc = 0.0;
     int i = 1; int j = 0;
     wcsncpy (seed, wbuffer, CONTEXT);
+    seed [CONTEXT] = L'\0';
 
     for (int i = 0; i < TLENGTH; i++)
     {
